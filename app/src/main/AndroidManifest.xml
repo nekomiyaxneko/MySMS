@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.nekomiyaxneko.mybms">
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".loginActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".MoreActivity"
+            android:label="更多"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".BrowseAllActivity"
+            android:label="浏览全部"
+            android:launchMode="singleTask" />
+        <activity android:name=".AddStudentActivity"
+            android:label="添加"/>
+        <activity android:name=".ChangeActivity"
+            android:label="修改成绩"/>
+        <activity android:name=".DeleteActivity"
+            android:label="删除"></activity>
+    </application>
+
+</manifest>
