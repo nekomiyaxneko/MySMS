@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="loginok"
         android:textColor="@android:color/black"
@@ -29,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintVertical_bias="0.015" />
 
     <Button
         android:id="@+id/browse_all"
@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintVertical_bias="0.304" />
 
     <Button
         android:id="@+id/change"
@@ -101,5 +101,54 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/change" />
+
+    <TextView
+        android:id="@+id/all_cot"
+        android:layout_width="105dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:text="人数:20"
+        android:textIsSelectable="true"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/text_view1"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/pass_cot"
+        android:layout_width="98dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:text="及格:7"
+        android:textIsSelectable="true"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/all_cot"
+        app:layout_constraintTop_toTopOf="@+id/all_cot" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="244dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/progressbg"
+        app:layout_constraintStart_toStartOf="@+id/text_view1"
+        app:layout_constraintTop_toBottomOf="@+id/text_view1" />
+
+    <TextView
+        android:id="@+id/pass_rate"
+        android:layout_width="119dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:text="及格率:90%"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toEndOf="@+id/pass_cot"
+        app:layout_constraintTop_toTopOf="@+id/pass_cot" />
 
 </android.support.constraint.ConstraintLayout>

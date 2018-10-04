@@ -63,8 +63,8 @@ public class AddStudentActivity extends BaseActivity implements View.OnClickList
                     Toast.makeText(this,"学号必须是整数",Toast.LENGTH_SHORT).show();
                     break;
                 }
-                else if(new_stu_id.getText().toString().length()>10){
-                    Toast.makeText(this,"学号长度不能大于10",Toast.LENGTH_SHORT).show();
+                else if(new_stu_id.getText().toString().length()<=4||new_stu_id.getText().toString().length()>10){
+                    Toast.makeText(this,"学号长度不能大于10或小于4",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else {

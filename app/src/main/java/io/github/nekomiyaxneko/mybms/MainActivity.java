@@ -1,14 +1,17 @@
 package io.github.nekomiyaxneko.mybms;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.litepal.LitePal;
+
+import java.util.List;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
@@ -21,6 +24,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         String userName=intent.getStringExtra("userName");
         TextView textView=(TextView) findViewById(R.id.text_view1);
         textView.setText("欢迎回来! "+userName);
+        //set_rate();
         Button browseAll=(Button) findViewById(R.id.browse_all);//浏览
         browseAll.setOnClickListener(this);
         Button more=(Button) findViewById(R.id.more);//更多
@@ -54,23 +58,55 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.more:
                 intent=new Intent(MainActivity.this,MoreActivity.class);
                 startActivity(intent);
+                //set_rate();
                 break;
 
             case R.id.change:
                 intent=new Intent(MainActivity.this,ChangeActivity.class);
                 startActivity(intent);
+                //set_rate();
                 break;
             case R.id.add_student:
                 intent= new Intent(MainActivity.this,AddStudentActivity.class);
                 startActivity(intent);
+                //set_rate();
                 break;
 
             case R.id.delete_student:
                 intent= new Intent(MainActivity.this,DeleteActivity.class);
                 startActivity(intent);
+                //set_rate();
                 break;
             default:
                 break;
         }
+    }
+    public void set_rate(){
+        int cotpass=0,cotall=0;
+        List<Student> stus= LitePal.findAll(Student.class);
+        for(Student i:stus){
+            Log.d("findfind", "find_pass: "+i.getName()+" "+i.getScore());
+            if(Integer.parseInt(i.getScore())>=60){
+                cotpass++;
+            }
+            cotall++;
+        }
+        double rate=(double) cotpass/(double) cotall;
+        rate=rate*100.0;
+        TextView pass_cot=findViewById(R.id.all_cot);
+        pass_cot.setText("及格数: "+cotpass);
+        TextView all_cot=findViewById(R.id.all_cot);
+        all_cot.setText("总人数: "+cotall);
+        TextView pass_rate=findViewById(R.id.pass_rate);
+        pass_rate.setText("及格率: "+(int)rate+"%");
+        ProgressBar progressBar=findViewById(R.id.progressBar);
+        int progress=(int)rate;
+        progressBar.setProgress(progress);
+    }
+
+    @Override
+    protected void onStart() {
+        set_rate();
+        super.onStart();
     }
 }
