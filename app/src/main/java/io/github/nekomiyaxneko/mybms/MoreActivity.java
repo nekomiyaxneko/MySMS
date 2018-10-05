@@ -22,8 +22,8 @@ public class MoreActivity extends BaseActivity implements View.OnClickListener{
         signout.setOnClickListener(this);
         TextView tomail=findViewById(R.id.toemail);
         TextView togithub=findViewById(R.id.togithub);
-        SpannableString ss=new SpannableString("1434084180@qq.com");
-        ss.setSpan(new URLSpan("mailto:1434084180@qq.com"), 0,17,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        SpannableString ss=new SpannableString("bill_lll@qq.com");
+        ss.setSpan(new URLSpan("mailto:bill_li@qq.com"), 0,15,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tomail.setText(ss);
         tomail.setMovementMethod(LinkMovementMethod.getInstance());
         ss=new SpannableString("github项目主页");

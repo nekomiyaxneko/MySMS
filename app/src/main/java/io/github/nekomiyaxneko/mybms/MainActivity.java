@@ -93,8 +93,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         }
         double rate=(double) cotpass/(double) cotall;
         rate=rate*100.0;
-        TextView pass_cot=findViewById(R.id.all_cot);
-        pass_cot.setText("及格数: "+cotpass);
+        TextView pass_cot=findViewById(R.id.pass_cot);
+        pass_cot.setText("及格: "+cotpass);
         TextView all_cot=findViewById(R.id.all_cot);
         all_cot.setText("总人数: "+cotall);
         TextView pass_rate=findViewById(R.id.pass_rate);

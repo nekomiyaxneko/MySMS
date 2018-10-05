@@ -90,7 +90,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="1434084180@qq.com"
+        android:text="bill_lll@qq.com"
         android:textIsSelectable="true"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
