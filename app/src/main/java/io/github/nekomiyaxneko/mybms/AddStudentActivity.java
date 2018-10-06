@@ -66,6 +66,9 @@ public class AddStudentActivity extends BaseActivity implements View.OnClickList
                 else if(new_stu_id.getText().toString().length()<4||new_stu_id.getText().toString().length()>10){
                     Toast.makeText(this,"学号长度不能大于10或小于4",Toast.LENGTH_SHORT).show();
                     break;
+                }else if(Integer.parseInt(new_stu_id.getText().toString())==0){
+                    Toast.makeText(this,"学号不能为纯0",Toast.LENGTH_SHORT).show();
+                    break;
                 }
                 else {
                     List<Student> students= LitePal.where("student_id =?",new_stu_id.getText().toString()).find(Student.class);
@@ -94,7 +97,7 @@ public class AddStudentActivity extends BaseActivity implements View.OnClickList
                 Student student=new Student();
                 student.setStudent_Id(new_stu_id.getText().toString());
                 student.setName(new_stu_name.getText().toString());
-                student.setScore(new_stu_score.getText().toString());
+                student.setScore(Integer.parseInt(new_stu_score.getText().toString())+"");
                 student.save();
                 Toast.makeText(this,"添加成功",Toast.LENGTH_SHORT).show();
                 super.onBackPressed();
