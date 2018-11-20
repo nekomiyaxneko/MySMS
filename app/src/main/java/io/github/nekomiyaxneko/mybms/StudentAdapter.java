@@ -45,6 +45,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         holder.studentScore.setText(student.getScore());
         holder.studentId.setText(student.getStudent_id());
         Log.d(TAG, "onBindViewHolder: view over");
+
     }
     @Override
     public int getItemCount(){

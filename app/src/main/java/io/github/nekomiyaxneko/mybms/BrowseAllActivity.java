@@ -26,18 +26,15 @@ public class BrowseAllActivity extends BaseActivity implements View.OnClickListe
     }
     private void makeList(){
         studentList=LitePal.findAll(Student.class);
-        for(Student i:studentList){
-            Log.d(TAG, "makeList: stu_id:"+i.getStudent_id()+" name:"+i.getName()+" score:"+i.getScore());
-        }
     }
     protected void show_data(){
-        Log.d(TAG, "show_data: showing");
+        //Log.d(TAG, "show_data: showing");
         RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         StudentAdapter adapter=new StudentAdapter(studentList);
         recyclerView.setAdapter(adapter);
-        Log.d(TAG, "show_data: showed");
+        //Log.d(TAG, "show_data: showed");
     }
     @Override
     public void onClick(View v) {
